@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Locker Room - The Invisible Player</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Go to welcome page">
+      <span class="brand-mark">19</span>
+      <span>The Invisible Player</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a class="active-link" href="locker.html">Locker Room</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="reflection.html">Reflection</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="locker-section" id="locker">
+      <div class="section-heading">
+        <p class="eyebrow">Locker Room of Macabea</p>
+        <h1 class="page-title">Choose an object to reveal its meaning</h1>
+      </div>
+
+      <div class="locker-layout">
+        <div class="jersey-panel" aria-label="Brazil jersey with Macabea number 19">
+          <div class="jersey">
+            <div class="jersey-collar"></div>
+            <div class="jersey-name">MACABEA</div>
+            <div class="jersey-number">19</div>
+            <div class="jersey-country">BRAZIL</div>
+          </div>
+        </div>
+
+        <div class="object-zone" aria-label="Interactive objects">
+          <button class="object-card active" type="button" data-object="typewriter">
+            <span class="object-icon">T</span>
+            <span>Typewriter</span>
+          </button>
+          <button class="object-card" type="button" data-object="radio">
+            <span class="object-icon">R</span>
+            <span>Radio</span>
+          </button>
+          <button class="object-card" type="button" data-object="mirror">
+            <span class="object-icon">M</span>
+            <span>Mirror</span>
+          </button>
+          <button class="object-card" type="button" data-object="cocacola">
+            <span class="object-icon">C</span>
+            <span>Coca-Cola</span>
+          </button>
+          <button class="object-card" type="button" data-object="star">
+            <span class="object-icon">*</span>
+            <span>Star</span>
+          </button>
+        </div>
+
+        <article class="meaning-panel" aria-live="polite">
+          <p class="meaning-label" id="meaningLabel">Typewriter</p>
+          <h2 id="meaningTitle">Her job</h2>
+          <p id="meaningText">
+            Macabea works as a typist, but her job does not give her power or comfort.
+            The typewriter represents survival, routine, and the way society only sees
+            her as useful when she is quiet.
+          </p>
+        </article>
+      </div>
+
+      <div class="page-actions">
+        <a class="secondary-button button-link" href="index.html">Back</a>
+        <a class="primary-button button-link" href="quiz.html">Go to the Mini Quiz</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Locker Room of Macabea</p>
+    <a href="quiz.html">Next: Quiz</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Quiz - The Invisible Player</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Go to welcome page">
+      <span class="brand-mark">19</span>
+      <span>The Invisible Player</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="locker.html">Locker Room</a>
+      <a class="active-link" href="quiz.html">Quiz</a>
+      <a href="reflection.html">Reflection</a>
+    </nav>
+  </header>
+
+  <main class="page-main quiz-page">
+    <section class="quiz-section" id="quiz">
+      <div class="section-heading">
+        <p class="eyebrow">Interactive Component</p>
+        <h1 class="page-title">Mini Quiz for the Judges</h1>
+      </div>
+
+      <div class="quiz-shell">
+        <div class="quiz-status">
+          <span id="questionCounter">Question 1 of 5</span>
+          <span id="scoreBadge">Score: 0</span>
+        </div>
+        <h2 id="quizQuestion">What does the typewriter represent in this project?</h2>
+        <div class="answers" id="answers"></div>
+        <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+        <button class="secondary-button" id="nextQuestion" type="button">Next Question</button>
+      </div>
+
+      <div class="page-actions">
+        <a class="secondary-button button-link" href="locker.html">Back to Locker Room</a>
+        <a class="primary-button button-link" href="reflection.html">Continue to Reflection</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Interactive quiz</p>
+    <a href="reflection.html">Next: Reflection</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
