@@ -55,9 +55,7 @@ const quizQuestions = [
 ];
 
 const objectButtons = document.querySelectorAll(".object-card");
-const meaningLabel = document.querySelector("#meaningLabel");
-const meaningTitle = document.querySelector("#meaningTitle");
-const meaningText = document.querySelector("#meaningText");
+const objectDetails = document.querySelectorAll(".object-detail");
 const questionCounter = document.querySelector("#questionCounter");
 const scoreBadge = document.querySelector("#scoreBadge");
 const quizQuestion = document.querySelector("#quizQuestion");
@@ -72,14 +70,11 @@ let answered = false;
 objectButtons.forEach((button) => {
   button.addEventListener("click", () => {
     const selectedObject = button.dataset.object;
-    const meaning = objectMeanings[selectedObject];
 
     objectButtons.forEach((item) => item.classList.remove("active"));
+    objectDetails.forEach((item) => item.classList.remove("active"));
     button.classList.add("active");
-
-    meaningLabel.textContent = meaning.label;
-    meaningTitle.textContent = meaning.title;
-    meaningText.textContent = meaning.text;
+    document.querySelector(`[data-detail="${selectedObject}"]`)?.classList.add("active");
   });
 });
 

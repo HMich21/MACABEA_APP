@@ -106,9 +106,8 @@ nav a.active-link {
   padding: 72px clamp(20px, 6vw, 88px);
   color: white;
   background:
-    radial-gradient(circle at 16% 18%, rgba(255, 214, 51, 0.72) 0 9%, transparent 10%),
-    linear-gradient(135deg, rgba(7, 63, 40, 0.88), rgba(10, 89, 45, 0.72)),
-    url("assets/readathon-rubric.png") center/cover;
+    linear-gradient(90deg, rgba(7, 37, 26, 0.9) 0%, rgba(7, 37, 26, 0.72) 46%, rgba(7, 37, 26, 0.12) 100%),
+    url("assets/macabea-hero.png") center/cover;
 }
 
 .welcome-section::after {
@@ -116,7 +115,7 @@ nav a.active-link {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(7, 63, 40, 0.95) 0%, rgba(7, 63, 40, 0.78) 48%, rgba(7, 63, 40, 0.35) 100%),
+    linear-gradient(0deg, rgba(7, 37, 26, 0.34), transparent 48%),
     repeating-linear-gradient(90deg, rgba(255,255,255,0.06) 0 2px, transparent 2px 90px);
 }
 
@@ -539,6 +538,99 @@ h3 {
 .qr-card p:not(.eyebrow) {
   color: var(--muted);
   font-weight: 700;
+}
+
+.locker-photo-panel {
+  min-height: 0;
+  padding: 0;
+  overflow: hidden;
+  background: #061910;
+}
+
+.locker-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.locker-layout {
+  grid-template-columns: minmax(320px, 1.25fr) minmax(280px, 0.75fr);
+  align-items: start;
+}
+
+.object-item {
+  display: grid;
+}
+
+.object-detail {
+  display: none;
+  padding: 18px 18px 20px;
+  color: var(--muted);
+  background: rgba(255, 253, 243, 0.97);
+  border: 1px solid var(--line);
+  border-top: 0;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 12px 26px rgba(20, 34, 27, 0.1);
+}
+
+.object-detail.active {
+  display: block;
+}
+
+.object-detail h2 {
+  margin-bottom: 8px;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.object-detail p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.reflection-section {
+  background:
+    linear-gradient(135deg, rgba(255, 253, 243, 0.92), rgba(226, 242, 230, 0.94)),
+    url("assets/macabea-hero.png") center/cover fixed;
+}
+
+.reflection-polished {
+  align-items: stretch;
+}
+
+.reflection-feature {
+  position: relative;
+  overflow: hidden;
+}
+
+.reflection-feature::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 8px;
+  background: var(--yellow);
+}
+
+.reflection-feature h2 {
+  margin-bottom: 14px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.closing-card {
+  color: white;
+  background:
+    linear-gradient(135deg, rgba(7, 63, 40, 0.96), rgba(22, 87, 183, 0.9));
+}
+
+.closing-card h2,
+.closing-card p {
+  color: white;
+}
+
+.closing-card .eyebrow {
+  color: var(--yellow);
 }
 
 @media (max-width: 930px) {
