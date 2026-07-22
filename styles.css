@@ -606,18 +606,19 @@ h3 {
 }
 
 .closing-card {
-  color: white;
+  color: var(--ink);
   background:
-    linear-gradient(135deg, rgba(7, 63, 40, 0.96), rgba(22, 87, 183, 0.9));
+    linear-gradient(135deg, rgba(255, 214, 51, 0.18), rgba(255, 253, 243, 0.98)),
+    var(--paper);
 }
 
 .closing-card h2,
 .closing-card p {
-  color: white;
+  color: var(--ink);
 }
 
 .closing-card .eyebrow {
-  color: var(--yellow);
+  color: var(--blue);
 }
 
 @media (max-width: 930px) {
