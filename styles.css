@@ -639,6 +639,10 @@ h3 {
   padding: 76px clamp(18px, 5vw, 72px);
 }
 
+.home-participation {
+  padding-top: 56px;
+}
+
 .participation-form-card {
   overflow: hidden;
   background: var(--paper);
