@@ -30,50 +30,24 @@
         <h1 class="page-title">Register Your Visit</h1>
       </div>
 
-      <div class="participation-layout">
-        <form class="participation-form" id="participationForm">
-          <div class="form-row">
-            <label for="participantName">Name</label>
-            <input id="participantName" name="participantName" type="text" placeholder="Your name" required>
-          </div>
-
-          <div class="form-row">
-            <label for="participantRole">Role</label>
-            <select id="participantRole" name="participantRole" required>
-              <option value="">Choose one</option>
-              <option value="Judge">Judge</option>
-              <option value="Student">Student</option>
-              <option value="Teacher">Teacher</option>
-              <option value="Guest">Guest</option>
-            </select>
-          </div>
-
-          <div class="form-row">
-            <label for="participantFeedback">What did you notice about Macabea?</label>
-            <textarea id="participantFeedback" name="participantFeedback" rows="4" placeholder="Write a short comment" required></textarea>
-          </div>
-
-          <button class="primary-button" type="submit">Register Participation</button>
-          <p class="form-message" id="participationMessage" aria-live="polite"></p>
-        </form>
-
-        <aside class="participation-summary" aria-label="Participation summary">
-          <p class="eyebrow">Live Count</p>
-          <h2><span id="participationCount">0</span> participants</h2>
+      <div class="participation-form-card">
+        <div class="form-note">
+          <p class="eyebrow">Central Record</p>
+          <h2>Every response is saved in Google Forms</h2>
           <p>
-            This page records each participation on this device and creates evidence
-            that can be downloaded for the Readathon activity.
+            Please complete this form after exploring the project. Responses from
+            any phone, tablet, or computer will be stored together for the
+            Readathon participation record.
           </p>
-          <div class="summary-actions">
-            <button class="secondary-button" id="downloadParticipation" type="button">Download CSV</button>
-            <button class="ghost-button" id="clearParticipation" type="button">Clear List</button>
-          </div>
-        </aside>
-      </div>
+        </div>
 
-      <div class="participation-list-wrap">
-        <h2>Participation List</h2>
-        <div class="participation-list" id="participationList"></div>
+        <iframe
+          class="google-form-frame"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfqBXVsLFUk0OeR8hT3bwczgsLgm3fJbjVAbn2m_bGksx-j-w/viewform?embedded=true"
+          title="The Invisible Player participation form"
+          loading="lazy">
+          Loading participation form...
+        </iframe>
       </div>
 
       <div class="page-actions">

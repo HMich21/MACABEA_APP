@@ -639,129 +639,41 @@ h3 {
   padding: 76px clamp(18px, 5vw, 72px);
 }
 
-.participation-layout {
-  display: grid;
-  grid-template-columns: minmax(280px, 1fr) minmax(260px, 0.7fr);
-  gap: 22px;
-  align-items: start;
-}
-
-.participation-form,
-.participation-summary,
-.participation-list-wrap {
+.participation-form-card {
+  overflow: hidden;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
 }
 
-.participation-form {
-  display: grid;
-  gap: 18px;
+.form-note {
   padding: clamp(22px, 4vw, 36px);
+  border-bottom: 1px solid var(--line);
 }
 
-.form-row {
-  display: grid;
-  gap: 8px;
-}
-
-.form-row label {
-  color: var(--deep-green);
-  font-weight: 900;
-}
-
-.form-row input,
-.form-row select,
-.form-row textarea {
-  width: 100%;
-  padding: 13px 14px;
-  color: var(--ink);
-  background: white;
-  border: 2px solid var(--line);
-  border-radius: 8px;
-  font: inherit;
-}
-
-.form-row textarea {
-  resize: vertical;
-}
-
-.form-message {
-  min-height: 24px;
-  margin: 0;
-  color: var(--deep-green);
-  font-weight: 900;
-}
-
-.participation-summary {
-  padding: clamp(22px, 4vw, 36px);
-}
-
-.participation-summary h2 {
+.form-note h2 {
   margin-bottom: 14px;
-  font-size: clamp(2.2rem, 5vw, 4.2rem);
+  font-size: clamp(2rem, 4vw, 3.3rem);
 }
 
-.participation-summary p:not(.eyebrow) {
+.form-note p:not(.eyebrow) {
+  max-width: 850px;
   color: var(--muted);
   line-height: 1.7;
 }
 
-.summary-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.participation-list-wrap {
-  margin-top: 22px;
-  padding: clamp(22px, 4vw, 36px);
-}
-
-.participation-list-wrap h2 {
-  margin-bottom: 16px;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-}
-
-.participation-list {
-  display: grid;
-  gap: 12px;
-}
-
-.participant-card {
-  display: grid;
-  gap: 8px;
-  padding: 16px;
+.google-form-frame {
+  display: block;
+  width: 100%;
+  min-height: 780px;
   background: white;
-  border: 1px solid var(--line);
-  border-radius: 8px;
-}
-
-.participant-card div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 8px;
-}
-
-.participant-card span,
-.participant-card p,
-.empty-state {
-  color: var(--muted);
-}
-
-.participant-card p,
-.empty-state {
-  margin: 0;
-  line-height: 1.6;
+  border: 0;
 }
 
 @media (max-width: 930px) {
   .locker-layout,
-  .reflection-grid,
-  .participation-layout {
+  .reflection-grid {
     grid-template-columns: 1fr;
   }
 
