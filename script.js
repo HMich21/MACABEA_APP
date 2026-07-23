@@ -153,3 +153,121 @@ if (nextQuestion) {
 }
 
 renderQuestion();
+
+const participationForm = document.querySelector("#participationForm");
+const participationCount = document.querySelector("#participationCount");
+const participationList = document.querySelector("#participationList");
+const participationMessage = document.querySelector("#participationMessage");
+const downloadParticipation = document.querySelector("#downloadParticipation");
+const clearParticipation = document.querySelector("#clearParticipation");
+const participationKey = "macabeaParticipationRecords";
+
+function getParticipationRecords() {
+  try {
+    return JSON.parse(localStorage.getItem(participationKey)) || [];
+  } catch (error) {
+    return [];
+  }
+}
+
+function saveParticipationRecords(records) {
+  localStorage.setItem(participationKey, JSON.stringify(records));
+}
+
+function renderParticipationRecords() {
+  if (!participationCount || !participationList) {
+    return;
+  }
+
+  const records = getParticipationRecords();
+  participationCount.textContent = records.length;
+
+  if (records.length === 0) {
+    participationList.innerHTML = '<p class="empty-state">No participants have been registered yet.</p>';
+    return;
+  }
+
+  participationList.innerHTML = "";
+
+  records.forEach((record, index) => {
+    const card = document.createElement("article");
+    const heading = document.createElement("div");
+    const name = document.createElement("strong");
+    const meta = document.createElement("span");
+    const feedback = document.createElement("p");
+
+    card.className = "participant-card";
+    name.textContent = `${index + 1}. ${record.name}`;
+    meta.textContent = `${record.role} - ${record.date}`;
+    feedback.textContent = record.feedback;
+
+    heading.append(name, meta);
+    card.append(heading, feedback);
+    participationList.appendChild(card);
+  });
+}
+
+function escapeCsv(value) {
+  return `"${String(value).replaceAll('"', '""')}"`;
+}
+
+if (participationForm) {
+  participationForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(participationForm);
+    const records = getParticipationRecords();
+    const newRecord = {
+      name: formData.get("participantName").trim(),
+      role: formData.get("participantRole"),
+      feedback: formData.get("participantFeedback").trim(),
+      date: new Date().toLocaleString("en-US")
+    };
+
+    records.push(newRecord);
+    saveParticipationRecords(records);
+    participationForm.reset();
+    renderParticipationRecords();
+
+    if (participationMessage) {
+      participationMessage.textContent = "Participation registered successfully.";
+    }
+  });
+}
+
+if (downloadParticipation) {
+  downloadParticipation.addEventListener("click", () => {
+    const records = getParticipationRecords();
+    const header = ["Name", "Role", "Comment", "Date"];
+    const rows = records.map((record) => [
+      record.name,
+      record.role,
+      record.feedback,
+      record.date
+    ]);
+    const csv = [header, ...rows]
+      .map((row) => row.map(escapeCsv).join(","))
+      .join("\n");
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "macabea-participation.csv";
+    link.click();
+    URL.revokeObjectURL(url);
+  });
+}
+
+if (clearParticipation) {
+  clearParticipation.addEventListener("click", () => {
+    saveParticipationRecords([]);
+    renderParticipationRecords();
+
+    if (participationMessage) {
+      participationMessage.textContent = "The participation list was cleared.";
+    }
+  });
+}
+
+renderParticipationRecords();

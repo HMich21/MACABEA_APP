@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Participation - The Invisible Player</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Go to welcome page">
+      <span class="brand-mark">19</span>
+      <span>The Invisible Player</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="locker.html">Locker Room</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="reflection.html">Reflection</a>
+      <a class="active-link" href="participation.html">Participation</a>
+    </nav>
+  </header>
+
+  <main class="page-main">
+    <section class="participation-section" id="participation">
+      <div class="section-heading">
+        <p class="eyebrow">Required to Participate</p>
+        <h1 class="page-title">Register Your Visit</h1>
+      </div>
+
+      <div class="participation-layout">
+        <form class="participation-form" id="participationForm">
+          <div class="form-row">
+            <label for="participantName">Name</label>
+            <input id="participantName" name="participantName" type="text" placeholder="Your name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="participantRole">Role</label>
+            <select id="participantRole" name="participantRole" required>
+              <option value="">Choose one</option>
+              <option value="Judge">Judge</option>
+              <option value="Student">Student</option>
+              <option value="Teacher">Teacher</option>
+              <option value="Guest">Guest</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="participantFeedback">What did you notice about Macabea?</label>
+            <textarea id="participantFeedback" name="participantFeedback" rows="4" placeholder="Write a short comment" required></textarea>
+          </div>
+
+          <button class="primary-button" type="submit">Register Participation</button>
+          <p class="form-message" id="participationMessage" aria-live="polite"></p>
+        </form>
+
+        <aside class="participation-summary" aria-label="Participation summary">
+          <p class="eyebrow">Live Count</p>
+          <h2><span id="participationCount">0</span> participants</h2>
+          <p>
+            This page records each participation on this device and creates evidence
+            that can be downloaded for the Readathon activity.
+          </p>
+          <div class="summary-actions">
+            <button class="secondary-button" id="downloadParticipation" type="button">Download CSV</button>
+            <button class="ghost-button" id="clearParticipation" type="button">Clear List</button>
+          </div>
+        </aside>
+      </div>
+
+      <div class="participation-list-wrap">
+        <h2>Participation List</h2>
+        <div class="participation-list" id="participationList"></div>
+      </div>
+
+      <div class="page-actions">
+        <a class="secondary-button button-link" href="reflection.html">Back to Reflection</a>
+        <a class="primary-button button-link" href="index.html">Restart Journey</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Participation evidence</p>
+    <a href="qr.html">Open QR Page</a>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
