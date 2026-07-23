@@ -502,6 +502,11 @@ h3 {
   font-weight: 900;
 }
 
+.footer-credit {
+  width: 100%;
+  line-height: 1.55;
+}
+
 .site-footer a {
   color: var(--yellow);
 }
