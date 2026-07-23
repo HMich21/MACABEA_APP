@@ -497,14 +497,30 @@ h3 {
   background: var(--deep-green);
 }
 
-.site-footer p {
-  margin: 0;
-  font-weight: 900;
-}
-
 .footer-credit {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(220px, 1fr);
+  gap: 28px;
   width: 100%;
   line-height: 1.55;
+}
+
+.footer-credit h2 {
+  margin: 0 0 8px;
+  color: var(--yellow);
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.footer-credit p,
+.footer-credit ul {
+  margin: 0;
+  font-weight: 800;
+}
+
+.footer-credit ul {
+  padding-left: 20px;
 }
 
 .site-footer a {
@@ -694,6 +710,10 @@ h3 {
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .footer-credit {
+    grid-template-columns: 1fr;
   }
 
   nav {
