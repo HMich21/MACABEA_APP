@@ -620,19 +620,17 @@ h3 {
 }
 
 .closing-card {
-  color: var(--ink);
   background:
     linear-gradient(135deg, rgba(255, 214, 51, 0.18), rgba(255, 253, 243, 0.98)),
     var(--paper);
 }
 
-.closing-card h2,
-.closing-card p {
-  color: var(--ink);
+.closing-card h2 {
+  color: var(--deep-green);
 }
 
-.closing-card .eyebrow {
-  color: var(--blue);
+.closing-card p {
+  color: var(--muted);
 }
 
 .participation-section {
